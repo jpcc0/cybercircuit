@@ -1,47 +1,50 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './App.css';
 
 function App() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubscribe = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setMessage('');
     try {
-      const response = await axios.post('/subscribe', { email });
+      const response = await axios.post('/api/subscribe', { email });
       setMessage(response.data.message);
       setEmail('');
     } catch (error) {
-      setMessage('There was an error subscribing');
+      setMessage('An error occurred. Please try again later.');
     }
   };
 
   return (
-    <div className="flex flex-col h-screen justify-center items-center bg-gray-100">
-      <img src="/logo.png" alt="Logo" className="mb-8" />
-      <form onSubmit={handleSubscribe} className="flex flex-col items-center">
+    <div className="flex flex-col items-center justify-start h-screen bg-timeless-noir">
+      <img src="/Cyber_transparent.png" alt="Cyber Circuit" className="mb-8 w-56 sm:w-24 md:w-32 lg:w-48" />
+      <form onSubmit={handleSubmit} className="w-full max-w-xs px-4">
         <input
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-2xl leading-tight focus:outline-none focus:shadow-outline mb-6 font-pirata text-center border-sophisticated-sage text-timeless-noir"
+          id="email"
           type="email"
+          placeholder="Enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter your email"
-          className="p-2 border border-gray-300 rounded mb-4"
-          required
         />
-        <button
-          type="submit"
-          className="bg-blue-500 text-white p-2 rounded"
-        >
-          Subscribe
-        </button>
+        <div className="flex justify-center">
+          <button
+            className="bg-muted-moss hover:bg-sophisticated-sage font-pirata transition duration-300 text-2xl text-white font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline"
+            type="submit"
+          >
+            Subscribe
+          </button>
+        </div>
       </form>
-      {message && <p className="text-green-500 mt-4">{message}</p>}
-      <footer className="absolute bottom-0 w-full text-center p-4">
-        <a href="/privacy-policy" className="text-gray-600 text-sm">Privacy Policy</a>
+      {message && <p className="text-center mt-4 text-2xl font-pirata text-timeless-noir">{message}</p>}
+      <footer className="absolute bottom-0 w-full text-center text-xl p-4 font-pirata bg-timeless-noir text-ethereal-ivory transition duration-300">
+        <a href="/privacy-policy" className="hover:text-sophisticated-sage">Privacy Policy</a> | <a href="https://github.com/jpcc0/cybercircuit" className="hover:text-sophisticated-sage">GitHub</a>
       </footer>
     </div>
   );
+  
 }
 
 export default App;
