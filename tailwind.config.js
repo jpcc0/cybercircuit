@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        dm: ['"DM Sans"', 'sans-serif'], // add new font: DM Sans
         pirata: ['"Pirata One"', 'cursive'],
         pixelify: ['"Pixelify Sans"', 'sans-serif'],
       },
