@@ -40,7 +40,7 @@ function App() {
       </form>
       {message && <p className="text-center mt-4 text-2xl font-dm text-timeless-noir">{message}</p>}
       <footer className="absolute bottom-0 w-full text-center text-xl p-4 font-dm bg-timeless-noir text-ethereal-ivory transition duration-300">
-        <a href="/privacy-policy" className="hover:text-sophisticated-sage">Privacy Policy</a> | <a href="https://github.com/jpcc0/cybercircuit" className="hover:text-sophisticated-sage">GitHub</a>
+        <a href="/privacypolicy" className="hover:text-sophisticated-sage">Privacy Policy</a> | <a href="https://github.com/jpcc0/cybercircuit" className="hover:text-sophisticated-sage">GitHub</a>
       </footer>
     </div>
   );
