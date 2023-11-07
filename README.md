@@ -1,4 +1,4 @@
-# Cyber Circuit App
+# Cyber Circuit
 
 ## Introduction
 
