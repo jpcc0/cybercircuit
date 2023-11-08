@@ -10,7 +10,7 @@ This project leverages a modern tech stack to provide a robust and scalable appl
 
 - **React**: A JavaScript library for building user interfaces with rich and engaging user experiences.
 - **Tailwind CSS**: A utility-first CSS framework for rapidly building custom designs.
-- **Node.js & Express**: Planned backend technology to handle server-side operations and data management.
+- **Node.js & Express**: Planned backend technology to handle server-side operations and data management. I have added this and now emails are being collected in the emails.json. I am contemplating using a third party for better data management/security.
 
 ## Setup & Installation
 
